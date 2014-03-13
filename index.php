@@ -91,15 +91,16 @@
                </div>
             </div>
          </section>
-         <section id="goingout" class="p-bmt-0" style="padding-top:80px;">
+<?php foreach($categories as $category): ?>
+         <section id="<?php echo $category['name']; ?>" class="p-bmt-0" style="padding-top:80px;">
             <div class="container">
                <div class="row animate fadeInUp animated">
                   <div class="col-sm-6">
-                  <h1 class="heading" style="font-family: 'lovelo';">Going Out</h1>
-                  <p>State schools may have their homecoming tailgates and frat mansions that fit more than 50 people, but GW has all of NW D.C. as its personal playground. Gay bars, music halls and nightclubs abound, leaving even the most savvy party animal with their head spinning. For an epic night you won’t remember check out these tried and true underworld haunts.</p>
+                  <h1 class="heading" style="font-family: 'lovelo';"><?php echo $category['title']; ?></h1>
+                  <p><?php echo $category['desc']; ?></p>
                   </div>
 <?php $i = 0; ?>
-<?php foreach($goingout as $item): ?>                           
+<?php foreach($category['awards'] as $item): ?>                           
                   <div class="col-sm-3" style="height:250px; overflow:hidden; margin-top:10px;">
                   <a href="view.php?id=<?php echo base64_encode($item['id']); ?>">
                   <img height="250" style="overflow:hidden; -webkit-filter: grayscale; -webkit-filter: brightness(40%);" src="img/<?php echo $item['pic']; ?>">
@@ -110,63 +111,7 @@
                </div>               
             </div>
          </section>
-         <section id="food" class="p-bmt-0" style="padding-top:80px;">
-            <div class="container">
-               <div class="row animate fadeInUp animated">
-                  <div class="col-sm-6" style="">
-                  <h1 class="heading" style="font-family: 'lovelo';">Food</h1>
-                  <p>Contrary to common belief, stealing from Whole Foods is not your only option. From best late night snacks to brunch with bottomless mimosas, there are plenty of deliciously affordable NW eateries. Scavenge together the coins at the bottom of your book bag, we can guarantee that these restaurants are worth every penny.</p>
-                  </div>
-<?php $i = 0; ?>
-<?php foreach($food as $item): ?>                           
-                  <div class="col-sm-3" style="height:250px; overflow:hidden; margin-top:10px;">
-                  <a href="view.php?id=<?php echo base64_encode($item['id']); ?>">
-                  <img height="250" style="overflow:hidden; -webkit-filter: grayscale; -webkit-filter: brightness(40%);" src="img/<?php echo $item['pic']; ?>">
-                  <h1 style="position:absolute; top:50px; left:30px; color:#fff; font-family: 'lovelo';"><?php echo $item['name']; ?></h1>
-                  </a>
-                  </div>
-<?php endforeach; ?>                  
-               </div>
-            </div>
-         </section>
-         <section id="activities" class="p-bmt-0" style="padding-top:80px;">
-            <div class="container">
-               <div class="row animate fadeInUp animated">
-                  <div class="col-sm-6">
-                  <h1 class="heading" style="font-family: 'lovelo';">Activities</h1>
-                  <p>You can only walk around the monuments so many times. Boredom is inevitable, but NW D.C. has much more to offer than marble statues. Break away from campus life with a trip to Dupont Circle or a friend-date that leaves the Georgetown waterfront behind. With concerts, movies and hookah bars, there is never a shortage of activities in the city. </p>
-                  </div>
-<?php $i = 0; ?>
-<?php foreach($activities as $item): ?>                           
-                  <div class="col-sm-3" style="height:250px; overflow:hidden; margin-top:10px;">
-                  <a href="view.php?id=<?php echo base64_encode($item['id']); ?>">
-                  <img height="250" style="overflow:hidden; -webkit-filter: grayscale; -webkit-filter: brightness(40%);" src="img/<?php echo $item['pic']; ?>">
-                  <h1 style="position:absolute; top:50px; left:30px; color:#fff; font-family: 'lovelo';"><?php echo $item['name']; ?></h1>
-                  </a>
-                  </div>
-<?php endforeach; ?>                  
-               </div>               
-            </div>
-         </section>
-         <section id="campuslife" class="p-bmt-0" style="padding-top:80px;">
-            <div class="container">
-               <div class="row animate fadeInUp animated">
-                  <div class="col-sm-6">
-                  <h1 class="heading" style="font-family: 'lovelo';">Campus Life</h1>
-                  <p>Life in the Foggy Bottom bubble is great. From the coolest Frats to rage with and the hottest GW athletes, these campus life picks highlight the best of GW’s athletic, academic and social offerings. You’re only in college for 4 years so make sure to capitalize on the best of campus life before you’re forced to leave the comfort of the bubble for the real world.</p>
-                  </div>
-<?php $i = 0; ?>
-<?php foreach($campuslife as $item): ?>
-                  <div class="col-sm-3" style="height:250px; overflow:hidden; margin-top:10px;">
-                  <a href="view.php?id=<?php echo base64_encode($item['id']); ?>">
-                  <img height="250" style="overflow:hidden; -webkit-filter: grayscale; -webkit-filter: brightness(40%);" src="img/<?php echo $item['pic']; ?>">
-                  <h1 style="position:absolute; top:50px; left:30px; color:#fff; font-family: 'lovelo';"><?php echo $item['name']; ?></h1>
-                  </a>
-                  </div>
-<?php endforeach; ?>                  
-               </div>               
-            </div>
-         </section>
+<?php endforeach; ?>
       </section>
       <script src="js/jquery.js"></script>
       <script src="js/jquery.isotope.min.js"></script>
